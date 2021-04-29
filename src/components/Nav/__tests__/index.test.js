@@ -3,6 +3,8 @@ import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Nav from '..';
 
+
+
 // configure the testing environment
 afterEach(cleanup);
 // declare what the test suite will be testing:
@@ -33,7 +35,9 @@ describe('emoji is visible', () => {
 describe('links are visible', () => {
   it('inserts text into the links', () => {
     const { getByTestId } = render(<Nav />);
+
     expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
     expect(getByTestId('about')).toHaveTextContent('About me');
   });
+
 })
